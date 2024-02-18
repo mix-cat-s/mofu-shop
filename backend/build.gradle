@@ -8,7 +8,9 @@ group = 'com.mofushop'
 version = '0.0.1-SNAPSHOT'
 
 java {
-  sourceCompatibility = '21'
+  toolchain {
+    languageVersion.set(JavaLanguageVersion.of(21))
+  }
 }
 
 configurations {
