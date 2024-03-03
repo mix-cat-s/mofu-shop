@@ -1,4 +1,4 @@
-# mofu-shopping
+# mofu-shop
 
 EC サイトっぽいやつを作ってみるプロジェクトです。
 
