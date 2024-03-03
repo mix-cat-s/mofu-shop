@@ -17,6 +17,8 @@ java {
   }
 }
 
+compileJava.options.compilerArgs = ['-Adoma.domain.converters=com.mofushop.mofushop.config.doma.DomainConverterProvider']
+
 configurations {
   compileOnly {
     extendsFrom annotationProcessor
