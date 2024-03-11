@@ -2,7 +2,6 @@ package com.mofushop.mofushop.security.repository;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.seasar.doma.Entity;
 import org.seasar.doma.Id;
@@ -11,10 +10,12 @@ import org.seasar.doma.Table;
 
 import com.mofushop.mofushop.security.domain.User;
 
+import mazewands.persistence.Identifier;
+
 @Entity(immutable = true, metamodel = @Metamodel)
 @Table(name = "users")
 record UserEntity(
-    @Id UUID id,
+    @Id Identifier<User> id,
     String userName,
     boolean active,
     Optional<LocalDateTime> createdAt,
