@@ -8,18 +8,21 @@ import org.seasar.doma.Id;
 import org.seasar.doma.Metamodel;
 import org.seasar.doma.Table;
 
+import com.mofushop.mofushop.config.doma.listener.TimestampedEntityListener;
 import com.mofushop.mofushop.security.domain.User;
 
+import lombok.With;
 import mazeneko.mazewands.persistence.Identifier;
+import mazeneko.mazewands.persistence.Timestamped;
 
-@Entity(immutable = true, metamodel = @Metamodel)
+@Entity(immutable = true, metamodel = @Metamodel, listener = TimestampedEntityListener.class)
 @Table(name = "users")
 record UserEntity(
     @Id Identifier<User> id,
     String userName,
     boolean active,
-    Optional<LocalDateTime> createdAt,
-    Optional<LocalDateTime> updatedAt) {
+    @With Optional<LocalDateTime> createdAt,
+    @With Optional<LocalDateTime> updatedAt) implements Timestamped<UserEntity> {
 
   User toDomain() {
     return new User(
@@ -33,7 +36,7 @@ record UserEntity(
         user.id(),
         user.userName(),
         user.active(),
-        Optional.of(LocalDateTime.now()), // TODO ここじゃなくinsert時のフックで入れる
+        Optional.empty(),
         Optional.empty());
   }
 
