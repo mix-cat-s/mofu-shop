@@ -1,4 +1,4 @@
-package com.mofushop.security;
+package com.mofushop;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
