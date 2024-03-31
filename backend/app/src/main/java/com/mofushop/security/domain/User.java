@@ -8,6 +8,6 @@ public record User(
     String userName,
     boolean active) implements Identifiable<User> {
   public static User createNewUser(String userName) {
-    return new User(Identifier.randomUUID(), "mofu", true);
+    return new User(Identifier.randomUUID(), userName, true);
   }
 }
