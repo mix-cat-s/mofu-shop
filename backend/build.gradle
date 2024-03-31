@@ -9,16 +9,21 @@ plugins {
 group = 'com.mofushop'
 version = gitVersion()
 
-compileJava.options.encoding = 'UTF-8'
-compileTestJava.options.encoding = 'UTF-8'
+tasks {
+  compileJava {
+    options.encoding = "UTF-8"
+    options.compilerArgs += ['-Adoma.domain.converters=com.mofushop.config.doma.DomainConverterProvider']
+  }
+  compileTestJava {
+    options.encoding = "UTF-8"
+  }
+}
 
 java {
   toolchain {
     languageVersion.set(JavaLanguageVersion.of(21))
   }
 }
-
-compileJava.options.compilerArgs = ['-Adoma.domain.converters=com.mofushop.config.doma.DomainConverterProvider']
 
 configurations {
   compileOnly {
