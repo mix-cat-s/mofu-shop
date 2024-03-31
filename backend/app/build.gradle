@@ -53,6 +53,7 @@ dependencies {
   implementation "io.github.mazeneko:mazewands-web:${mazewandsVersion}"
   implementation "org.springframework.boot:spring-boot-starter-web"
   implementation "org.springframework.boot:spring-boot-starter-actuator"
+  implementation "org.springframework.boot:spring-boot-starter-validation"
   implementation "org.seasar.doma:doma-core:${domaVersion}"
   implementation "org.seasar.doma:doma-slf4j:${domaVersion}"
   implementation "org.seasar.doma.boot:doma-spring-boot-starter:${domaSpringBootVersion}"
