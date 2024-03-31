@@ -2,23 +2,27 @@ package com.mofushop.mofushop.security.repository;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.seasar.doma.Entity;
 import org.seasar.doma.Id;
 import org.seasar.doma.Metamodel;
 import org.seasar.doma.Table;
 
+import com.mofushop.mofushop.config.doma.listener.TimestampedEntityListener;
 import com.mofushop.mofushop.security.domain.User;
 
-@Entity(immutable = true, metamodel = @Metamodel)
+import lombok.With;
+import mazewands.persistence.Identifier;
+import mazewands.persistence.Timestamped;
+
+@Entity(immutable = true, metamodel = @Metamodel, listener = TimestampedEntityListener.class)
 @Table(name = "users")
 record UserEntity(
-    @Id UUID id,
+    @Id Identifier<User> id,
     String userName,
     boolean active,
-    Optional<LocalDateTime> createdAt,
-    Optional<LocalDateTime> updatedAt) {
+    @With Optional<LocalDateTime> createdAt,
+    @With Optional<LocalDateTime> updatedAt) implements Timestamped<UserEntity> {
 
   User toDomain() {
     return new User(
@@ -32,7 +36,7 @@ record UserEntity(
         user.id(),
         user.userName(),
         user.active(),
-        Optional.of(LocalDateTime.now()), // TODO ここじゃなくinsert時のフックで入れる
+        Optional.empty(),
         Optional.empty());
   }
 

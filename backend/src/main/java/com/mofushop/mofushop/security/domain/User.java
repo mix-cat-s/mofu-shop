@@ -1,9 +1,13 @@
 package com.mofushop.mofushop.security.domain;
 
-import java.util.UUID;
+import mazewands.persistence.Identifiable;
+import mazewands.persistence.Identifier;
 
-public record User(UUID id, String userName, boolean active) {
+public record User(
+    Identifier<User> id,
+    String userName,
+    boolean active) implements Identifiable<User> {
   public static User createNewUser(String userName) {
-    return new User(UUID.randomUUID(), "mofu", true);
+    return new User(Identifier.randomUUID(), "mofu", true);
   }
 }

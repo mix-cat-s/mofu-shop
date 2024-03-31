@@ -25,11 +25,26 @@ configurations {
   }
 }
 
+def secretsProperties = new Properties()
+def secretsPropertiesFile = project.rootProject.file('secrets.properties')
+if(secretsPropertiesFile.exists()){
+  secretsProperties.load(secretsPropertiesFile.newDataInputStream())
+}
 repositories {
   mavenCentral()
+  maven {
+    url 'https://maven.pkg.github.com/mazeneko/mazewands'
+    credentials {
+      username = secretsProperties.getProperty("gpr.user") ?: System.getenv("USERNAME")
+      password = secretsProperties.getProperty("gpr.token") ?: System.getenv("TOKEN")
+    }
+  }
 }
 
 dependencies {
+  implementation "io.github.mazeneko:mazewands-core:${mazewandsVersion}"
+  implementation "io.github.mazeneko:mazewands-persistence:${mazewandsVersion}"
+  implementation "io.github.mazeneko:mazewands-web:${mazewandsVersion}"
   implementation 'org.springframework.boot:spring-boot-starter-web'
   implementation 'org.springframework.boot:spring-boot-starter-actuator'
   implementation "org.seasar.doma:doma-core:${domaVersion}"
