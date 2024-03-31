@@ -1,4 +1,4 @@
-package com.mofushop.mofushop.security.repository;
+package com.mofushop.security.repository;
 
 import java.time.LocalDateTime;
 import java.util.Optional;
@@ -8,8 +8,8 @@ import org.seasar.doma.Id;
 import org.seasar.doma.Metamodel;
 import org.seasar.doma.Table;
 
-import com.mofushop.mofushop.config.doma.listener.TimestampedEntityListener;
-import com.mofushop.mofushop.security.domain.User;
+import com.mofushop.config.doma.listener.TimestampedEntityListener;
+import com.mofushop.security.domain.User;
 
 import lombok.With;
 import mazewands.persistence.Identifier;

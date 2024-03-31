@@ -1,12 +1,12 @@
-package com.mofushop.mofushop.security;
+package com.mofushop.security;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
-import com.mofushop.mofushop.security.domain.User;
-import com.mofushop.mofushop.security.domain.UserCommand;
-import com.mofushop.mofushop.security.domain.UserQuery;
+import com.mofushop.security.domain.User;
+import com.mofushop.security.domain.UserCommand;
+import com.mofushop.security.domain.UserQuery;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

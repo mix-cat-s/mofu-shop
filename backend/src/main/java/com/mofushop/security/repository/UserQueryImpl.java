@@ -1,4 +1,4 @@
-package com.mofushop.mofushop.security.repository;
+package com.mofushop.security.repository;
 
 import java.util.List;
 
@@ -7,8 +7,8 @@ import org.seasar.doma.jdbc.criteria.NativeSql;
 import org.seasar.doma.jdbc.criteria.expression.Expressions;
 import org.springframework.stereotype.Repository;
 
-import com.mofushop.mofushop.security.domain.User;
-import com.mofushop.mofushop.security.domain.UserQuery;
+import com.mofushop.security.domain.User;
+import com.mofushop.security.domain.UserQuery;
 
 import lombok.RequiredArgsConstructor;
 import mazewands.persistence.Identifier;

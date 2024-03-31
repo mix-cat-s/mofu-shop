@@ -1,4 +1,4 @@
-package com.mofushop.mofushop.config.doma.listener;
+package com.mofushop.config.doma.listener;
 
 import java.time.LocalDateTime;
 

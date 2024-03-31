@@ -1,4 +1,4 @@
-package com.mofushop.mofushop;
+package com.mofushop;
 
 import org.springframework.boot.test.context.SpringBootTest;
 

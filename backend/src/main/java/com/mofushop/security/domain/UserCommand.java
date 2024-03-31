@@ -1,4 +1,4 @@
-package com.mofushop.mofushop.security.domain;
+package com.mofushop.security.domain;
 
 import mazewands.persistence.Command;
 

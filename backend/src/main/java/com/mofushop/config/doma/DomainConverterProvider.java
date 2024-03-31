@@ -1,4 +1,4 @@
-package com.mofushop.mofushop.config.doma;
+package com.mofushop.config.doma;
 
 import org.seasar.doma.DomainConverters;
 

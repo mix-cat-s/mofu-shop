@@ -17,7 +17,7 @@ java {
   }
 }
 
-compileJava.options.compilerArgs = ['-Adoma.domain.converters=com.mofushop.mofushop.config.doma.DomainConverterProvider']
+compileJava.options.compilerArgs = ['-Adoma.domain.converters=com.mofushop.config.doma.DomainConverterProvider']
 
 configurations {
   compileOnly {
