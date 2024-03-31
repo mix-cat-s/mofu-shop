@@ -3,7 +3,7 @@ spring:
     ansi:
       enabled: always
   datasource:
-    driverClassName: org:postgresql:Driver
+    driverClassName: org.postgresql.Driver
 doma:
   jdbc-logger: SLF4J
   dialect: postgres
