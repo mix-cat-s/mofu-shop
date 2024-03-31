@@ -5,5 +5,6 @@ CREATE TABLE users (
     user_name VARCHAR(255) NOT NULL,
     active BOOLEAN NOT NULL DEFAULT TRUE,
     created_at TIMESTAMP NOT NULL,
-    updated_at TIMESTAMP
+    updated_at TIMESTAMP,
+    UNIQUE(user_name)
 );

@@ -7,7 +7,7 @@ package com.mofushop.exception;
  */
 public sealed abstract class CustomException extends RuntimeException
     permits
-    SampleException {
+    DuplicatedUserNameException {
   CustomException(String message) {
     super(message);
   }

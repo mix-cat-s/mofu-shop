@@ -59,4 +59,13 @@ class UserQueryImpl implements UserQuery {
         .map(UserEntity::toDomain)
         .toList();
   }
+
+  @Override
+  public boolean existsUserName(String userName) {
+    return this.entityql
+        .from(user_)
+        .where(c -> c.eq(user_.userName, userName))
+        .fetchOptional()
+        .isPresent();
+  }
 }

@@ -31,7 +31,7 @@ class CustomExceptionHandler extends ResponseEntityExceptionHandler {
     final var headers = new HttpHeaders();
     final var statusCode = switch (ex) {
       // add your custom exceptions
-      case SampleException e -> HttpStatus.INTERNAL_SERVER_ERROR;
+      case DuplicatedUserNameException e -> HttpStatus.BAD_REQUEST;
     };
     return this.handleExceptionInternal(ex, body, headers, statusCode, request);
   }
