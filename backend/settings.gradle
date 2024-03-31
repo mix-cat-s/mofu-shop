@@ -3,3 +3,4 @@ plugins {
 }
 
 rootProject.name = 'mofushop'
+include("app")
