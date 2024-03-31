@@ -1,0 +1,10 @@
+spring:
+  output:
+    ansi:
+      enabled: always
+  datasource:
+    driverClassName: org:postgresql:Driver
+doma:
+  jdbc-logger: SLF4J
+  dialect: postgres
+  naming: snake-lower-case
