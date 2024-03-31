@@ -8,3 +8,11 @@ doma:
   jdbc-logger: SLF4J
   dialect: postgres
   naming: snake-lower-case
+logging:
+  file:
+    path: logs
+  charset:
+    file: UTF-8
+  logback:
+    rollingpolicy:
+      max-history: 30
